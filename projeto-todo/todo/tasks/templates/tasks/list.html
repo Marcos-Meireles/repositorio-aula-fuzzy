@@ -16,19 +16,43 @@
             <i class="fas fa-search" id="search-btn"></i>
         </form>
     </div>
+    <div class="col-12 filter-div">
+        <span>Filtrar por:</span>
+        <select name="filter" id="filter" class="form-control">
+            <option value="">Escolha uma opção</option>
+            <option value="todo">Tarefas a fazer</option>
+            <option value="doing">Tarefas em execução</option>
+            <option value="done">Tarefas concluídas</option>
+        </select>
+    </div>
     {% if messages %}
     <ul class="messages">
         {% for message in messages %}
-        <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+        <li> {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
         {% endfor %}
     </ul>
     {% endif %}
     <ul class="task-list">
         {% for task in tasks %}
-        <li class="task-item">
-            <span><a href="/task/{{task.id}}">{{task.title}}</a></span>
-            <a href="delete/{{task.id}}" class="delete-btn"><span><i class="fas fa-trash"></i></span></a>
-            <a href="edit/{{task.id}}"><span><i class="fas fa-edit"></i></span></a>
+        {% if task.done == 'todo' %}
+            <li class="task-item">
+        {% elif task.done == 'doing' %}
+            <li class="task-item doing">
+        {% else %}
+            <li class="task-item done">
+        {% endif %}
+            <span><a href="/task/{{task.id}}">{{task.title}}</a><span class="status-task">{{task.done}}</span></span>
+            <a href="delete/{{task.id}}" class="delete-btn"><span><i class="fas fa-trash" title="Deletar"></i></span></a>
+            <a href="edit/{{task.id}}"><span><i class="fas fa-edit" title="Editar"></i></span></a>
+            {% if task.done == 'todo' %}
+            <a href="changestatus/{{task.id}}"><span><i class="fas fa-play" title="Iniciar Task"></i></span></a>
+            {% endif %}
+            {% if task.done == 'doing' %}
+            <a href="changestatus/{{task.id}}"><span><i class="fas fa-check" title="Marcar como concluído"></i></span></a>
+            {% endif %}
+            {% if task.done == 'done' %}
+            <a href="changestatus/{{task.id}}"><span><i class="fas fa-undo" title="Refazer Task"></i></span></a>
+            {% endif %}
         </li>
         {% endfor %}
     </ul>
@@ -48,6 +72,9 @@
                 <a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
             {% endif %}
         </span>
+    </div>
+    <div class="dashboard-ref" id="dash-ref">
+        <a href="dashboard/"><i class="fas fa-chart-line"></i> Visualizar resultados</a>
     </div>
 </div>
 {% endblock %}

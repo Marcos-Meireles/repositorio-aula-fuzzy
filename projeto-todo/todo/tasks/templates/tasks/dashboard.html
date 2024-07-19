@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+  <h1>Dashboard</h1>
+  <div class="container dashboard">
+    <div class="col-4 dashboard-box" id="dashboard-lastdays">
+      <h4>Finalizadas nos últimos 30 dias</h4>
+      <span>{{ tasksDoneRecently }}</span>
+    </div>
+    <div class="col-4 dashboard-box" id="dashboard-done">
+      <h4>Tarefas concluídas</h4>
+      <span>{{ tasksDone }}</span>
+    </div>
+    <div class="col-4 dashboard-box" id="dashboard-doing">
+      <h4>Tarefas em execução</h4>
+      <span>{{ tasksDoing }}</span>
+    </div>
+    <div class="col-4 dashboard-box" id="dashboard-todo">
+      <h4>Tarefas a fazer</h4>
+      <span>{{ tasksTodo }}</span>
+    </div>
+  </div>
+  <div>
+    <a id="retornar-tarefas" href="/">
+      <div class="col-2 retornar">
+         Retornar
+      </div>
+    </a>
+  </div>
+</div>
+{% endblock %}

@@ -1,5 +1,12 @@
 .container-fluid {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     padding: 0;
+}
+
+.container-fluid .row{
+    margin: 0;
 }
 
 /* Navbar */
@@ -62,10 +69,24 @@
     position: relative;
 }
 
+/* Filter */
+
+.filter-div {
+    padding: 0px;
+    margin-bottom: 15px;
+}
+
+#filter{
+    display: inline-block;
+    width: 200px;
+    margin-left: 10px;
+}
+
 /* Lista de tarefas */
 
 .list-div {
     padding: 0;
+    flex:1;
 }
 
 .task-list {
@@ -81,11 +102,62 @@
     border-bottom: 1px dashed #ccc;
 }
 
+.status-task{
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 10px;
+    box-sizing: border-box;
+    appearance: none;
+    border: none;
+    color: dimgrey;
+    background-color: lightgrey;
+    padding-inline: var(--ds-space-050, 4px);
+    display: inline-flex;
+    border-radius: var(--ds-border-radius, 3px);
+    block-size: min-content;
+    position: static;
+    overflow: hidden;
+}
+
+.doing .status-task{
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 10px;
+    box-sizing: border-box;
+    appearance: none;
+    border: none;
+    color: #FFD700;
+    background-color: lightyellow;
+    padding-inline: var(--ds-space-050, 4px);
+    display: inline-flex;
+    border-radius: var(--ds-border-radius, 3px);
+    block-size: min-content;
+    position: static;
+    overflow: hidden;
+}
+
+.done .status-task{
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 10px;
+    box-sizing: border-box;
+    appearance: none;
+    border: none;
+    color: green;
+    background-color: lawngreen;
+    padding-inline: var(--ds-space-050, 4px);
+    display: inline-flex;
+    border-radius: var(--ds-border-radius, 3px);
+    block-size: min-content;
+    position: static;
+    overflow: hidden;
+}
+
 .task-item.done {
     background-color: #CCC;
 }
 
-.fas.fa-trash, .fas.fa-edit, .fas.fa-check {
+.fas.fa-trash, .fas.fa-edit, .fas.fa-check , .fas.fa-undo,  .fas.fa-play{
     cursor: pointer;
     margin: 5px;
     font-size: 20px;
@@ -100,8 +172,12 @@
     color: #13c43f;
 }
 
-.fas.fa-check {
+.fas.fa-check{
     color: #CCC;
+}
+
+.done .fas.fa-check {
+    color: #3476e2;
 }
 
 /* Rodapé */
@@ -151,3 +227,78 @@ ul.messages li {
 .auth-card{
     margin-bottom: 30px;
 }
+
+.change-form-p{
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* dashboards */
+
+.dashboard {
+    margin-top: 20px;
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+
+.dashboard h4{
+    font-size: 15px;
+}
+
+.dashboard span{
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.dashboard-box {
+    float: left;
+    background-color: #dfdfdf;
+    color: #FFFFFF;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 130px;
+    width: 23%;
+    margin: 0 1% 1% 0;
+}
+
+#dashboard-lastdays{
+    background-color: #3476e2;
+
+}
+#dashboard-doing{
+    background-color: #f6f665;
+}
+
+#dashboard-done{
+    background-color: #13c43f;
+}
+
+#dashboard-todo{
+    background-color: grey;
+}
+
+.retornar {
+    background-color: #555555;
+    cursor: pointer;
+    display: inline-block;
+    color: #FFF;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* dash-ref */
+.dashboard-ref{
+    margin: 20px 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+
+.dashboard-ref a{
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+

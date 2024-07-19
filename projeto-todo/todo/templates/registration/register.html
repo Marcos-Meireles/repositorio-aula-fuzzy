@@ -8,14 +8,14 @@
   <div class="col-md-4 offset-md-4">
     <div class="card auth-card">
       <div class="card-body">
-        <h4 class="card-title text-center">Entrar no To Do List</h4>
+        <h4 class="card-title text-center">Registrar no To Do List</h4>
         <form method="POST">
-          {% csrf_token %}
+            {% csrf_token %}
           <input type="hidden" name="next" value="{{ next }}">
-          {{ form|crispy }}
-          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+            {{ form|crispy }}
+          <button type="submit" class="btn btn-primary btn-block">Registrar</button>
         </form>
-        <p class="change-form-p">Não tem uma conta? <a href="/accounts/register">Registrar</a></p>
+        <p class="change-form-p">Já tem uma conta? <a href="/accounts/login">Entrar</a></p>
       </div>
     </div>
   </div>
