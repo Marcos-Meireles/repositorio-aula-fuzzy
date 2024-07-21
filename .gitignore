@@ -1,14 +1,62 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
+/djangoapp/static/
+/djangoapp/media/
+/djangoapp/project/local_settings.py
+gunicorn-error-log
+__localcode
+/data/
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+
+# Backup files #
+*.bak
+
+# If you are using PyCharm #
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# AWS User-specific
+.idea/**/aws.xml
+
+# Generated files
+.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# File-based project format
+*.iws
+
+# IntelliJ
+out/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Python #
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
-
 # Distribution / packaging
-.Python
-build/
+.Python build/
 develop-eggs/
 dist/
 downloads/
@@ -20,48 +68,27 @@ parts/
 sdist/
 var/
 wheels/
-pip-wheel-metadata/
-share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
+*.manifest
+*.spec
 
-# Virtual environment
-myenv/
-venv/
-env/
-ENV/
-.venv/
-.venv/
-env.bak/
-venv.bak/
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Django stuff:
-*.log
-*.pot
-*.pyc
-*.pyo
-*.db
-*.sqlite3
-
-# Django migrations
-**/migrations/*.pyc
-**/migrations/*.pyo
-**/migrations/__pycache__/
-**/migrations/*.py
-
-# Flask instance folder
-instance/
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -69,38 +96,48 @@ target/
 # pyenv
 .python-version
 
-# celery beat schedule file
-celerybeat-schedule
+# celery
+celerybeat-schedule.*
 
 # SageMath parsed files
 *.sage.py
 
 # Environments
 .env
-.env.*
 .venv
+env/
 venv/
 ENV/
-env/
-.env.bak
+env.bak/
 venv.bak/
 
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
+# mkdocs documentation
+/site
 
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
+# mypy
+.mypy_cache/
 
-# PyCharm
-.idea/
-*.iml
-*.ipr
-*.iws
+# Sublime Text #
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
 
-# VSCode
-.vscode/
+# sftp configuration file
+sftp-config.json
+
+# Package control specific files Package
+Control.last-run
+Control.ca-list
+Control.ca-bundle
+Control.system-ca-bundle
+GitHub.sublime-settings
+
+# Visual Studio Code #
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
