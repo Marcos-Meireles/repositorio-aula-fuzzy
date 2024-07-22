@@ -73,7 +73,7 @@ wheels/
 *.egg
 *.manifest
 *.spec
-idea/
+.idea/
 
 # Installer logs
 pip-log.txt
