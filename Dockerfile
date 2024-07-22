@@ -13,7 +13,7 @@ ENV PYTHONUNBUFFERED 1
 COPY .todo /todo
 COPY .scripts /scripts
 
-# Entra no diretório /todo
+# Entra no diretório
 WORKDIR /todo
 
 # A porta 8000 estará disponível para acesso externo ao container
